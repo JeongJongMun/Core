@@ -7,7 +7,7 @@ using UnityEngine;
 // ----- Unity
 
 #if UNITY_ANDROID
-using Google.Play.Review;
+// using Google.Play.Review; // Disabled for build
 #endif
 
 namespace Core.Scripts.Manager
