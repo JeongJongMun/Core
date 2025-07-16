@@ -6,5 +6,5 @@ using UnityEngine;
 
 public class Test : SingletonBase<Test>
 {
-    // build automation test
+    // build automation test 2
 }
