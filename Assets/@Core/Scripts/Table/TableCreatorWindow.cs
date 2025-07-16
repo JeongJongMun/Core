@@ -45,7 +45,7 @@ namespace Core.Scripts.Table
 		private const string SampleDataValue = "{@DataValue}";
 		private const string SampleClassName = "{@ClassName}";
 		private const string SampleKeyType = "{@KeyType}";
-		private const string ScriptSavePath = "@Scripts/TableData";
+		private const string ScriptSavePath = "Scripts/TableData";
 		private const string TableResourceSavePath = "Assets/@Resources/TableData";
 
 		void OnEnable()
@@ -296,7 +296,7 @@ namespace Core.Scripts.Table
 
 		void CreateTableScript(List<KeyValuePair<string, string>> dicDefines)
 		{
-			var scriptSample = (TextAsset)AssetDatabase.LoadAssetAtPath("Assets/@Core/Scripts/TableSample.txt", typeof(TextAsset));
+			var scriptSample = (TextAsset)AssetDatabase.LoadAssetAtPath("Assets/@Core/Scripts/Table/TableSample.txt", typeof(TextAsset));
 			var scriptContext = scriptSample.text;
 
 			var strDefines = string.Empty;
@@ -413,8 +413,8 @@ namespace Core.Scripts.Table
 			}
 
 
-			var type = Type.GetType($"Core.{table_name}");
-			var dataType = Type.GetType($"Core.{table_name}Data");
+			var type = Type.GetType($"Core.Scripts.Table.{table_name}");
+			var dataType = Type.GetType($"Core.Scripts.Table.{table_name}Data");
 			var asset = CreateInstance(type);
 
 			var listKeySchem1 = type.GetProperty("FirstKey");

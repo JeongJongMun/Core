@@ -1,5 +1,6 @@
 using Core.Scripts;
 using Core.Scripts.Manager;
+using Core.Scripts.Table;
 using DG.Tweening;
 using UnityEngine;
 
@@ -25,5 +26,8 @@ public class MainScene : BaseScene
         {
             Managers.UI.ClosePopupUI(popup);
         });
+        
+        var data = Tables.Instance.GetTable<TestTable>().GetData(1001);
+        Debug.Log($" ID: {data.ID}, Name: {data.Name}, HP: {data.HP}, Damage: {data.Damage}");
     }
 }
